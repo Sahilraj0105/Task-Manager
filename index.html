@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Creation Module</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="header-brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div>
+                    <h1>Task Creation Module</h1>
+                    <p>Manage and organize your daily objectives</p>
+                </div>
+            </div>
+            <div id="taskCountBadge" class="task-count-badge">
+                <p><i class="fa-regular fa-clock"></i><span id="pendingCounter">0 </span><span
+                        class="mobile-hide">Pending Task</span></p>
+                <p><i class="fa-regular fa-square-check"></i><span id="completedCounter">0 </span><span
+                        class="mobile-hide">Completed Task</span></p>
+            </div>
+            <button id="themeBtn">Light</button>
+
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- When Ever we add a new task it will show the task addition thing -->
+        <div id="notification" class="notification hidden">
+            <span id="notificationText" class="notification-text"></span>
+            <button id="closeNotificationBtn" class="notification-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="line"></div>
+        </div>
+
+        <div class="card form-card">
+            <div class="card-gradient-bar"></div>
+            <div class="card-header">
+                <span class="badge badge-indigo">1</span>
+                <h2>Create New Task</h2>
+            </div>
+            <form id="taskForm" class="task-form">
+                <div class="form-grid">
+                    <div class="form-group title-group">
+                        <label for="taskTitle">Task Title Input</label>
+                        <div class="input-wrapper">
+                            <input required type="text" id="taskTitle" value="" placeholder="Enter task title..." />
+                        </div>
+                    </div>
+                    <div class="form-group category-group">
+                        <label for="taskCategory">Category Dropdown</label>
+                        <div class="input-wrapper select-wrapper">
+                            <select required id="taskCategory">
+                                <option value="" disabled selected>Select a category</option>
+                                <option value="Work">Work</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Urgent">Urgent</option>
+                                <option value="Study">Study</option>
+                            </select>
+                            <span class="select-icon">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-actions">
+                    <div class="form-group status-group">
+                        <label for="taskCategory">Status Dropdown</label>
+                        <div class="input-wrapper select-wrapper">
+                            <select required id="taskStatus">
+                                <option value="Pending">Pending</option>
+                                <option value="Completed">Completed</option>
+                            </select>
+                            <span class="select-icon">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <button type="submit" id="addTaskBtn" class="btn btn-primary">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Add Task</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Task Overview Section -->
+        <div class="overview-section">
+            <div class="overview-header">
+                <div class="overview-title-wrapper">
+                    <span class="badge badge-violet">2</span>
+                    <h2>Task Overview List</h2>
+                </div>
+                <div class="filter-buttons">
+                    <button id="filterAll" class="filter-btn active">All</button>
+                    <button id="filterPending" class="filter-btn">Pending</button>
+                    <button id="filterCompleted" class="filter-btn">Completed</button>
+                    <button id="filterClearAllTask" class="filter-btn">Clear Task</button>
+                </div>
+            </div>
+
+            <!-- Task List Container -->
+            <div id="taskList" class="task-list">
+
+            </div>
+
+            <!-- Empty State Placeholder -->
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">
+                    <i class="fa-regular fa-clipboard"></i>
+                </div>
+                <p class="empty-title">No tasks found</p>
+                <p class="empty-subtitle">Create your first task using the module above.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Task Creation Module Using HTML CSS And JavaScript</p>
+    </footer>
+
+    <div id="eventGrandParent">
+        <div id="eventParent">
+            <button id="eventChild">Child</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
